@@ -1,0 +1,96 @@
+/*importar fonte*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/*reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*corpo*/
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-color: #1c1c1c;
+    color: white;
+}
+
+/*sessão flex*/
+section{
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*título principal da página*/
+.title{
+    font-size: 3rem;
+    margin-top: 2rem 0rem;
+}
+
+/*todos as divs faq*/
+.faq{
+    max-width: 700px;
+    margin: 2rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid white;
+    cursor: pointer;    
+}
+
+/*pergunta do faq*/
+.faq .question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+/*h3 da pergunta do faq*/
+.faq .question h3{
+    font-size: 1.8rem;
+}
+
+/*resposta do faq*/
+.faq .answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+/*parágrafo da resposta do faq*/
+.faq .answer p{
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 1.4rem;
+}
+
+/*resposta do faq quando este estiver ativo*/
+.faq.active .answer{
+    max-height: 300px;
+    animation: fade 0.5s ease-in-out;
+}
+
+/*svg quando faq estiver ativo*/
+.faq.active svg{
+    transform: rotate(180deg);
+}
+
+/*transição padrão do svg*/
+.faq svg{
+    transition: transform ease-in 0.2s;
+}
+
+/*animação da resposta*/
+@keyframes fade {
+    from{
+        opacity: 0;
+        transition: translateY(-10px);
+    }
+
+    to{
+        opacity: 1;
+        transition: translateY(-0px);
+    }
+}
